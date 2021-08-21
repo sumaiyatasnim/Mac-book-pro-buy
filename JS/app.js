@@ -24,6 +24,20 @@ function updateTotal() {
     let final = finalTotal.innerText = totalCost.innerText = parseInt(totalPrice)
 }
 
+// promocode field
+document.getElementById('promo-button').addEventListener('click', function () {
+    const promoInput = document.getElementById('promo-input');
+    const promoText = promoInput.value;
+    if (promoText == 'stevekaku') {
+        let promoResult = finalTotal.innerText * .2;
+        let finalPromoResult = finalTotal.innerText - promoResult;
+
+        finalTotal.innerText = finalPromoResult;
+        // clear input value
+        document.getElementById('promo-input').value = '';
+    }
+})
+
 memoryEightGb.addEventListener('click', function () {
     const memoryOne = memoryCost.innerText = parseInt(0);
     updateTotal()
@@ -54,15 +68,7 @@ deliveryPayment.addEventListener('click', function () {
     updateTotal()
 });
 
-// promocode field
-document.getElementById('promo-button').addEventListener('click', function () {
-    const promoInput = document.getElementById('promo-input');
-    const promoText = promoInput.value;
-    if (promoText == stevekaku) {
-        const twentyPercentLess = (parseInt(totalPrice) * 20) / 100;
-        const updatedPrice = final - twentyPercentLess;
-    }
-})
+
 
 
 
