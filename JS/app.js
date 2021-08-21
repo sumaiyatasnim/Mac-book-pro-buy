@@ -33,6 +33,7 @@ document.getElementById('promo-button').addEventListener('click', function () {
         let finalPromoResult = finalTotal.innerText - promoResult;
 
         finalTotal.innerText = finalPromoResult;
+        promoInput.disable = true;
         // clear input value
         document.getElementById('promo-input').value = '';
     }
